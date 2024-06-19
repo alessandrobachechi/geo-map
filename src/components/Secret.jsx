@@ -12,6 +12,7 @@ import {
 } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { Icon, divIcon, point } from "leaflet";
+import Logout from "./Logout"; // Import the Logout component
 
 const customIcon = new Icon({
   iconUrl: "icons8-pin-mappa-48.png",
@@ -243,6 +244,12 @@ const Secret = () => {
           onAddMarker={handleAddMarker}
           clickEnabled={clickEnabled}
         />
+
+        {/* Add the Logout button here */}
+        <div className="logout-container">
+          <Logout />
+        </div>
+
         <div className="bottom-container">
           <button onClick={handleExportMarkers} className="export-button">
             Export Markers
@@ -254,16 +261,6 @@ const Secret = () => {
           />
         </div>
       </MapContainer>
-      <div className="bottom-container">
-        <button onClick={handleExportMarkers} className="export-button">
-          Export Markers
-        </button>
-        <input
-          type="file"
-          onChange={handleFileUpload}
-          className="upload-input"
-        />
-      </div>
     </div>
   );
 };

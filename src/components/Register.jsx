@@ -20,7 +20,7 @@ const Register = () => {
       alert(error.message);
     } else {
       console.log("Registered successfully");
-      await login(data.user); // Assumi che ci sia una funzione di login che imposta l'utente autenticato
+      await login(data.user);
     }
   };
 

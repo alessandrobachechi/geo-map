@@ -7,7 +7,7 @@ import Secret from "./components/Secret";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { AuthProvider } from "./hooks/useAuth";
 import Register from "./components/Register";
-import "./Layout.css"; // Importa il file CSS di Layout
+import "./Layout.css";
 
 function App() {
   return (
@@ -19,11 +19,12 @@ function App() {
           <Route path="/register/" element={<Register />} />
           <Route
             path="/secret"
-            element={
+            element={<Secret />}
+            /* element={
               <ProtectedRoute>
                 <Secret />
               </ProtectedRoute>
-            }
+            } */
           />
         </Route>
       </Routes>

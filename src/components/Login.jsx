@@ -19,7 +19,7 @@ const Login = () => {
       alert(error.message);
     } else {
       console.log("Logged in successfully");
-      navigate("/secret"); // Redirect to the secret page
+      navigate("/secret");
     }
   };
 
