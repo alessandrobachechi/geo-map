@@ -245,7 +245,7 @@ const Secret = () => {
           clickEnabled={clickEnabled}
         />
 
-        {/* Add the Logout button here */}
+        {/* Add Logout component */}
         <div className="logout-container">
           <Logout />
         </div>

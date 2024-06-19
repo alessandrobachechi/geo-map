@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import { supabase } from "../utils/supabaseClient";
-import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hooks/useAuth";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
     });
@@ -19,7 +19,7 @@ const Login = () => {
       alert(error.message);
     } else {
       console.log("Logged in successfully");
-      navigate("/secret");
+      login(data.user); // Call login function from useAuth with user data
     }
   };
 

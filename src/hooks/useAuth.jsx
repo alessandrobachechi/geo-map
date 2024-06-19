@@ -1,4 +1,4 @@
-import { createContext, useContext, useMemo, useState } from "react";
+import { createContext, useContext, useMemo } from "react";
 import { supabase } from "../utils/supabaseClient";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "./useLocalStorage";
@@ -17,6 +17,7 @@ export const AuthProvider = ({ children }) => {
   const logout = async () => {
     await supabase.auth.signOut();
     setUser(null);
+    navigate("/login");
   };
 
   const value = useMemo(
@@ -25,7 +26,7 @@ export const AuthProvider = ({ children }) => {
       login,
       logout,
     }),
-    []
+    [user] // Include user in the dependencies array
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
