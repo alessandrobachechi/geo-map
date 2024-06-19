@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  
+}
+
+
+
+#root {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
+  font-family: sans-serif;
+  color: black
+}
+
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+  margin-top: -60px;
+  margin-left: -180px;
+  margin-right: -6px;
+}
+
+.cluster-icon {
+  background-color: #dea6ff;
+  height: 2em;
+  width: 2em;
+  color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.popup-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.popup-form button {
+  padding: 8px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.popup-form button:hover {
+  background-color: #0056b3;
+}
+
+.export-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 80px;
+}
+
+.export-button:hover {
+  background-color: #ff7ef9;
+}
+
+.export-button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 80px;
+}
+
+.export-button:hover {
+  background-color: #218838;
+
+}
+
+.upload-input {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.popup-delete-button {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.popup-delete-button:hover {
+  background-color: #ff1a1a;
+}
+
+.bottom-container{
+  background-color: rgb(51, 51, 51);
+  
+}
+
+/* .leaflet-touch .leaflet-control-attribution,
+.leaflet-touch .leaflet-control-layers,
+.leaflet-touch .leaflet-bar {
+  box-shadow: none !important;
+  margin-top: 100px !important; 
+} */
+
+.leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
+  -ms-touch-action: none;
+  touch-action: none;
+  /* margin-left: -180px;
+  margin-top: -55px; */
+}
+
+.bottom-container {
+  background-color: rgb(51, 51, 51);
+  display: none;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  display: none;
+}
+
+
+

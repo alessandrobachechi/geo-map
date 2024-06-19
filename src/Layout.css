@@ -1,0 +1,139 @@
+/* Default styles */
+
+/* Ensure Poppins font is imported (if not already imported) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Applying Poppins font to all elements */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-bar {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.nav-bar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-bar a:hover {
+    color: white;
+    border: solid 1px blue;
+    border-radius: 10px;
+    background-color: blue;
+    
+}
+
+.layout-container {
+    display: flex;
+    height: calc(100vh - 50px); /* Adjusted to account for the nav-bar */
+    font-family: 'Poppins', sans-serif;
+}
+
+.layout-left {
+    flex: 2;
+    background-color: blue; /* Verde */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-left h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.layout-left p {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.layout-right {
+    flex: 1;
+    background-color: #ffffff; /* Bianco */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-container {
+    margin-bottom: 40px;
+    padding: 50px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.form-container form div {
+    margin-bottom: 15px;
+}
+
+.form-container form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container form input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-container form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-container form button:hover {
+    background-color: blue;
+}
+
+/* Media query for smartphones */
+@media only screen and (max-width: 600px) {
+    .layout-left {
+        display: none; /* Nascondi completamente il layout sinistro */
+    }
+
+    .layout-right {
+        flex: 1; /* Assicura che il layout destro occupi tutto lo spazio disponibile */
+    }
+
+    .layout-container {
+        flex-direction: column; /* Impila la navbar sopra e il layout destro sotto */
+        height: 100vh; /* Occupa tutta la viewport */
+    }
+
+    .nav-bar {
+        padding: 10px; /* Riduci il padding della navbar */
+        margin-top: 45px;
+        width: 100vw;
+    }
+
+    .nav-bar a {
+        padding: 10px; /* Riduci il padding dei link nella navbar */
+        margin: 0 5px; /* Riduci il margine dei link nella navbar */
+    }
+}
