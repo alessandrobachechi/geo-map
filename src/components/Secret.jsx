@@ -128,7 +128,7 @@ const Secret = () => {
     console.log(newMarker);
 
     const { status, error } = await supabase.from("locations").insert({
-      name: "ciao",
+      name: "",
       lon: newMarker.geocode[0],
       lat: newMarker.geocode[1],
     });
