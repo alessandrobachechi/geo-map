@@ -7,7 +7,6 @@ body {
     font-family: 'Helvetica Neue', 'Poppins', sans-serif;
     overflow-x: hidden;
     overflow-y: hidden;
-    /* margin-left: -10px; */
 }
 
 .nav-bar {
@@ -34,13 +33,13 @@ body {
 
 .layout-container {
     display: flex;
-    height: calc(100vh - 50px); /* Adjusted to account for the nav-bar */
+    height: calc(100vh - 50px); 
     font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .layout-left {
     flex: 2;
-    background-color: blue; /* Verde */
+    background-color: blue; 
     color: white;
     display: flex;
     flex-direction: column;
@@ -51,7 +50,7 @@ body {
 
 .layout-left h1 {
     font-size: 3rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .layout-left p {
@@ -59,9 +58,10 @@ body {
     text-align: center;
 }
 
+
 .layout-right {
     flex: 1;
-    background-color: #ffffff; /* Bianco */
+    background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -117,7 +117,7 @@ body {
     background-color: blue;
 }
 
-/* Media query for smartphones */
+
 @media only screen and (max-width: 600px) {
     .layout-left {
         display: none; 
