@@ -35,7 +35,7 @@ const Layout = () => {
           <h1>Geo Map</h1>
           <p>
             Benvenuti su Geo Map! Qui potrete creare la vostra mappa
-            personalizzata con i vostri luoghi preferiti.
+            personalizzata <span>con i vostri luoghi preferiti.</span>
           </p>
         </div>
         <div className="layout-right">
