@@ -6,6 +6,9 @@
 /* Applying Poppins and Helvetica Neue fonts to all elements */
 body {
     font-family: 'Helvetica Neue', 'Poppins', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* margin-left: -10px; */
 }
 
 .nav-bar {
