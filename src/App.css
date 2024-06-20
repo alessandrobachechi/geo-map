@@ -4,11 +4,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
-
-
 
 #root {
   height: 100vh;
@@ -17,9 +14,10 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-left: 10px;
   gap: 1em;
-  font-family: sans-serif;
-  color: black
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
+  color: black;
 }
 
 .leaflet-container {
@@ -40,12 +38,14 @@
   justify-content: center;
   border-radius: 50%;
   font-size: 1.2rem;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .popup-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .popup-form input {
@@ -53,6 +53,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .popup-form button {
@@ -63,6 +64,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .popup-form button:hover {
@@ -78,28 +80,12 @@
   border-radius: 50px;
   cursor: pointer;
   font-size: 16px;
-  margin-bottom: 80px;
-}
-
-.export-button:hover {
-  background-color: #ff7ef9;
-}
-
-.export-button {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
   margin-bottom: 80px;
 }
 
 .export-button:hover {
   background-color: #218838;
-
 }
 
 .upload-input {
@@ -110,10 +96,8 @@
   cursor: pointer;
   font-size: 16px;
   color: white;
-  cursor: pointer;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
-
-
 
 .popup-delete-button {
   background-color: #ff5252;
@@ -123,29 +107,21 @@
   padding: 8px 12px;
   cursor: pointer;
   margin-top: 8px;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .popup-delete-button:hover {
   background-color: #ff1a1a;
 }
 
-.bottom-container{
+.bottom-container {
   background-color: rgb(51, 51, 51);
-  
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
-
-/* .leaflet-touch .leaflet-control-attribution,
-.leaflet-touch .leaflet-control-layers,
-.leaflet-touch .leaflet-bar {
-  box-shadow: none !important;
-  margin-top: 100px !important; 
-} */
 
 .leaflet-container.leaflet-touch-drag.leaflet-touch-zoom {
   -ms-touch-action: none;
   touch-action: none;
-  /* margin-left: -180px;
-  margin-top: -55px; */
 }
 
 .bottom-container {
@@ -166,25 +142,6 @@
   z-index: 1000;
 }
 
-/* .logout-button{
-  background-color: blue;
-  color: white;
-  margin-top: 10px;
-  padding-top: 5px;
-  padding-left: 15px;
-  padding-bottom: 5px;
-  padding-right: 15px;
-  border-radius: 20px; 
-} */
-
-.logout-container {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  z-index: 1000;
-  pointer-events: auto;
-}
-
 .logout-button {
   background-color: blue;
   color: white;
@@ -194,14 +151,5 @@
   border-radius: 5px;
   cursor: pointer;
   z-index: 1001;
+  font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
-
-
-
-
-
-
-
-
-
-
