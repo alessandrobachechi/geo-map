@@ -1,14 +1,12 @@
-/* Default styles */
 
-/* Ensure Poppins font is imported (if not already imported) */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-/* Applying Poppins and Helvetica Neue fonts to all elements */
+
 body {
     font-family: 'Helvetica Neue', 'Poppins', sans-serif;
     overflow-x: hidden;
     overflow-y: hidden;
-    /* margin-left: -10px; */
+    
 }
 
 .nav-bar {
@@ -35,13 +33,13 @@ body {
 
 .layout-container {
     display: flex;
-    height: calc(100vh - 50px); /* Adjusted to account for the nav-bar */
+    height: calc(100vh - 50px); 
     font-family: 'Helvetica Neue', 'Poppins', sans-serif;
 }
 
 .layout-left {
     flex: 2;
-    background-color: blue; /* Verde */
+    background-color: blue; 
     color: white;
     display: flex;
     flex-direction: column;
@@ -62,7 +60,7 @@ body {
 
 .layout-right {
     flex: 1;
-    background-color: #ffffff; /* Bianco */
+    background-color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -118,30 +116,124 @@ body {
     background-color: blue;
 }
 
-/* Media query for smartphones */
+
+
+/* Smartphones (portrait) */
 @media only screen and (max-width: 600px) {
     .layout-left {
-        display: none; /* Nascondi completamente il layout sinistro */
+        display: none; 
     }
 
     .layout-right {
-        flex: 1; /* Assicura che il layout destro occupi tutto lo spazio disponibile */
+        flex: 1; 
     }
 
     .layout-container {
-        flex-direction: column; /* Impila la navbar sopra e il layout destro sotto */
-        height: 100vh; /* Occupa tutta la viewport */
-        font-family: 'Helvetica Neue', 'Poppins', sans-serif;
+        flex-direction: column; 
+        height: 100vh; 
     }
 
     .nav-bar {
-        padding: 10px; /* Riduci il padding della navbar */
+        padding: 10px; 
         margin-top: 45px;
         width: 100vw;
     }
 
     .nav-bar a {
-        padding: 10px; /* Riduci il padding dei link nella navbar */
-        margin: 0 5px; /* Riduci il margine dei link nella navbar */
+        padding: 10px; 
+        margin: 0 5px; 
     }
 }
+
+/* Tablets (portrait and landscape) */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+    .layout-container {
+        flex-direction: column; 
+        height: auto; 
+    }
+
+    .layout-left {
+        flex: 1;
+        height: 50vh; 
+    }
+
+    .layout-right {
+        flex: 1;
+        height: 50vh; 
+    }
+
+    .form-container {
+        width: 90%; 
+        margin: auto;
+    }
+
+    .nav-bar {
+        padding: 15px;
+    }
+
+    .nav-bar a {
+        padding: 12px;
+        margin: 0 8px;
+    }
+}
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1440px) {
+    .layout-container {
+        flex-direction: row; 
+        height: calc(100vh - 50px); 
+    }
+
+    .layout-left {
+        flex: 2;
+    }
+
+    .layout-right {
+        flex: 1;
+    }
+
+    .form-container {
+        width: 80%;
+        margin: auto;
+    }
+
+    .nav-bar {
+        padding: 20px;
+    }
+
+    .nav-bar a {
+        padding: 14px 20px;
+        margin: 0 10px;
+    }
+}
+
+
+@media only screen and (min-width: 1441px) {
+    .layout-container {
+        flex-direction: row; 
+        height: calc(100vh - 50px); 
+    }
+
+    .layout-left {
+        flex: 2;
+    }
+
+    .layout-right {
+        flex: 1;
+    }
+
+    .form-container {
+        width: 70%;
+        margin: auto;
+    }
+
+    .nav-bar {
+        padding: 20px;
+    }
+
+    .nav-bar a {
+        padding: 14px 20px;
+        margin: 0 10px;
+    }
+}
+
