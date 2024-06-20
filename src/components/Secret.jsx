@@ -189,7 +189,7 @@ const Secret = () => {
       <MapContainer center={userPosition} zoom={10}>
         <TileLayer
           attribution="Stadia.AlidadeSmoothDark"
-          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png"
+          url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=e2439d1c-7006-427a-8f66-9d904f1ad639"
         />
         <Marker position={userPosition} icon={userLocationIcon}></Marker>
         <MarkerClusterGroup
