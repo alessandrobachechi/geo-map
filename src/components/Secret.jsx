@@ -13,6 +13,7 @@ import {
 import MarkerClusterGroup from "react-leaflet-cluster";
 import { Icon, divIcon, point } from "leaflet";
 import Logout from "./Logout"; // Import the Logout component
+import { AuthInvalidCredentialsError } from "@supabase/supabase-js";
 
 const customIcon = new Icon({
   iconUrl: "icons8-pin-mappa-48.png",
@@ -97,17 +98,15 @@ const Secret = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch("/data.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => setMarkers(data))
-      .catch((error) => {
-        console.error("Error fetching marker data:", error);
-      });
+    const fetchLocations = async () => {
+      try {
+        const { data } = await supabase.from("locations").select();
+
+        setMarkers(data);
+      } catch (error) {}
+    };
+
+    fetchLocations();
   }, []);
 
   useEffect(() => {
@@ -125,28 +124,45 @@ const Secret = () => {
   }, []);
 
   const handleAddMarker = async (newMarker) => {
-    console.log(newMarker);
-
-    const { status, error } = await supabase.from("locations").insert({
-      name: "",
+    const formattedNewMarker = {
+      name: "Lorem Ipsum",
       lon: newMarker.geocode[0],
       lat: newMarker.geocode[1],
-    });
+    };
 
-    console.log(status, error);
+    const { data, status, error } = await supabase
+      .from("locations")
+      .insert(formattedNewMarker)
+      .select();
 
-    setMarkers((currentMarkers) => [...currentMarkers, newMarker]);
+    if (status === 201) {
+      setMarkers((currentMarkers) => [
+        ...currentMarkers,
+        { ...formattedNewMarker, id: data[0].id },
+      ]);
+    }
   };
 
-  const handleUpdateMarkerName = (index, newName) => {
+  const handleUpdateMarkerName = async (index, newName, selectedMarker) => {
+    console.log(newName, selectedMarker);
+    const { error } = await supabase
+      .from("locations")
+      .update({ name: newName })
+      .eq("id", selectedMarker.id);
+
     setMarkers((currentMarkers) =>
       currentMarkers.map((marker, i) =>
-        i === index ? { ...marker, popUp: newName } : marker
+        i === index ? { ...marker, name: newName } : marker
       )
     );
   };
 
-  const handleDeleteMarker = (index) => {
+  const handleDeleteMarker = async (index, selectedMarker) => {
+    const { error } = await supabase
+      .from("locations")
+      .delete()
+      .eq("id", selectedMarker.id);
+
     setClickEnabled(false);
     setMarkers((currentMarkers) =>
       currentMarkers.filter((marker, i) => i !== index)
@@ -197,28 +213,32 @@ const Secret = () => {
           iconCreateFunction={createClusterCustomIcon}
         >
           {markers.map((marker, index) => (
-            <Marker key={index} position={marker.geocode} icon={customIcon}>
+            <Marker
+              key={index}
+              position={[marker.lon, marker.lat]}
+              icon={customIcon}
+            >
               <Popup>
                 <div>
-                  <p>{marker.popUp}</p>
+                  <p>{marker.name}</p>
                   <form
                     className="popup-form"
                     onSubmit={(e) => {
                       e.preventDefault();
                       const newName = e.target.elements.name.value;
-                      handleUpdateMarkerName(index, newName);
+                      handleUpdateMarkerName(index, newName, marker);
                     }}
                   >
                     <input
                       type="text"
                       name="name"
                       placeholder="Enter name"
-                      defaultValue={marker.popUp}
+                      defaultValue={marker.name}
                     />
                     <button type="submit">Update</button>
                   </form>
                   <button
-                    onClick={() => handleDeleteMarker(index)}
+                    onClick={() => handleDeleteMarker(index, marker)}
                     className="popup-delete-button"
                   >
                     Delete
